@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mahzon_media</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    @font-face {
+        font-family: yasin;
+        src: url(kimi.ttf);
+    }
+    body {
+      font-family: 'Vazir', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .card {
+        text-decoration: none;
+        color: white;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 15px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .order-btn {
+      background-color: #ff4d6d;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      transition: background 0.3s;
+    }
+
+    .order-btn:hover {
+      background-color: #ec6363;
+    }
+    #yasin{
+border: 5px solid rgb(255, 255, 255);
+font-size: 10px;
+color: black;
+border-radius: 10px;
+      text-align: center;
+  background-color: white;
+  text-decoration: none;
+    }
+    #yasinpik{
+width: 300px;
+height: auto;
+border-radius: 10px;
+margin: auto;
+    }
+    #yasinpik1{
+width: 300px;
+height: auto;
+border-radius: 10px;
+margin: auto;
+    }
+    #yasinpik2{
+width: 200px;
+height: 200px;
+border-radius: 10px;
+margin: auto;
+text-align: center;
+    }
+    #g1{
+        color: black;
+        background-color: white;
+        border: 10px #000000;
+        border-radius: 10px;
+        text-align: center;
+        font-family: yasin ;
+        padding: 0px;
+    }
+ 
+ .update-footer {
+    background: linear-gradient(to right, #ffe6f0, #ffccdf);
+    padding: 25px 15px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+  }
+
+  .update-footer h3 {
+    margin-bottom: 15px;
+    color: #000000;
+    font-size: 20px;
+  }
+
+  .update-footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .update-footer li a {
+    background: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 1px solid #ccc;
+  }
+
+  .update-footer li a:hover {
+    background: #000000;
+    color: white;
+    border-color: #000000;
+  }
+.advertisement {
+    background-color: #f76a6a; /* رنگ پس‌زمینه */
+    border-radius: 10px;
+    text-align: center; /* مرکزگرایی محتوا */
+    padding: 10px 0; /* فضای داخلی */
+    border-bottom: 2px solid #666; /* خط زیر بنر */
+}
+
+.advertisement img {
+    width: auto; /* تنظیم تصویر به نسبت فضای موجود */
+    height: auto; /* حفظ نسبت تصویر */
+    margin: 0px;
+}
+  @font-face {
+      font-family: 'yasin';
+      src: url('kimi.ttf');
+    }
+
+    @font-face {
+      font-family: 'yasin';
+      src: url('kimi.ttf');
+    }
+
+    body {
+      margin: 0;
+      font-family: yasin, sans-serif;
+      background: #ffe6f0;
+      transition: margin-right 0.3s ease;
+    }
+
+    /* نوار منو */
+    .sidebar {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 230px;
+      height: 100vh;
+      background: linear-gradient(135deg, #d46e6e, #ffffff);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .sidebar.collapsed {
+      width: 60px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      transition: opacity 0.3s ease;
+    }
+
+    .sidebar.collapsed .logo {
+      opacity: 0;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .sidebar a i {
+      margin-left: 10px;
+      font-size: 18px;
+    }
+
+    .sidebar.collapsed a span {
+      display: none;
+    }
+
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* دکمه باز و بسته کردن */
+    .toggle-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      font-size: 20px;
+      background: white;
+      color: #000000;
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer;
+      z-index: 1100;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    /* محتوای اصلی */
+    .main-content {
+      margin-right: 230px;
+      padding: 0px;
+      transition: margin-right 0.3s ease;
+    }
+
+    .sidebar.collapsed ~ .main-content {
+      margin-right: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        margin-right: 60px;
+      }
+
+      .sidebar.collapsed ~ .main-content {
+        margin-right: 60px;
+      }
+    }
+#ali76{
+    font-size: 10px;
+    color: red;
+}
+  
+</style>
+</head>
+<body>
+  <body>
+
+  <div class="sidebar" id="sidebar">
+    <div class="logo">MAHZON_MEDIA</div>
+    <a href="ali.html"><i class="fas fa-home"></i><span>خانه</span></a>
+    <a href="#"><i class="fas fa-image"></i><span>گالری</span></a>
+    <a href="ali.html"><i class="fas fa-store"></i><span>محصولات</span></a>
+    <a href="#"><i class="fas fa-phone"></i><span>تماس با ما 09135004710</span></a>
+    <h1 id="ali76" >
+  </div>
+
+  <div class="toggle-btn" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="main-content">
+  
+
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("collapsed");
+    }
+  </script>
+  <div class="advertisement">
+        <a href="https://www.instagram.com/mahzon_media?igsh=MzNwNm0zZWkwd292" target="_blank">
+            <img src="mahfi2.png" alt="تبلیغ">
+        </a>
+    </div>
+<div id="g1" >
+  <h1>سایت فروشگاه محزون مدیا</h1> 
+</div>
+
+ 
+</div>
+<div class="container">
+    <!-- نمونه 12 محصول -->
+    <!-- تکرار کارت‌ها -->
+    <div class="card">
+      <img id="yasinpik" src="rzome'.png" alt="پوستر 1">
+      <div class="info">
+        <div class="title"ا>پوستر رزومه کد2276 فتوشاپ</div>
+        <div class="price">30.000تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik" src="mahzon1.png" alt="پوستر 2">
+      <div class="info">
+        <div class="title">پوستر رزومه کد5736 فتوشاپ</div>
+        <div class="price">35.0000 تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik" src="ئشاظخد2.png" alt="پوستر 3">
+      <div class="info">
+        <div class="title">پوستر رزومه کد4768 فتوشاپ</div>
+        <div class="price"> 30.000 تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik" src="mahzon2.png" alt="پوستر 4">
+      <div class="info">
+        <div class="title">پوستر رزومه کد4876  فتوشاپ</div>
+        <div class="price">40.000 تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik1" src="(1).png" alt="پوستر 5">
+      <div class="info">
+        <div class="title">پوستر  مذهبی کد7834 فتوشاپ</div>
+        <div class="price">20.000تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik1" src="(2).png" alt="پوستر 6">
+      <div class="info">
+        <div class="title">پوستر  مذهبی کد8636 فتوشاپ</div>
+        <div class="price">15.000 تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+        </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik1" src="(3).png" alt="پوستر 7">
+      <div class="info">
+        <div class="title">پوستر  مذهبی کد5789 فتوشاپ</div>
+        <div class="price">40.000 تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik1" src="(4).png" alt="پوستر 8">
+      <div class="info">
+        <div class="title">پوستر  مذهبی کد3459 فتوشاپ</div>
+        <div class="price">25.000 تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik2" src="Artboard 1.png" alt="پوستر 9">
+      <div class="info">
+        <div class="title"></div>
+        <div class="price"> تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik2" src="Artboard 1.png" alt="پوستر 10">
+      <div class="info">
+        <div class="title"></div>
+        <div class="price"> تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik2" src="Artboard 1.png" alt="پوستر 11">
+      <div class="info">
+        <div class="title"></div>
+        <div class="price"> تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+    <div class="card">
+      <img id="yasinpik2" src="Artboard 1.png" alt="پوستر 12">
+      <div class="info">
+        <div class="title"></div>
+        <div class="price"> تومان</div>
+        <a class="order-btn" href="https://rubika.ir/Support_mh" target="_blank">ثبت سفارش</a>
+      </div>
+    </div>
+  </div>
+<div id="yasin" >
+    <h1  >تمامی سفارشات بصورت عکس یا فایل  لایه  باز میباشد</h1>
+    <h1>سایت از ساعت 10 شب تا 9 صبح به بروزرسانی میشود(هروز به غیراز پنجشنبه ها)</h1>   
+      <h1>اطلاعات سایت محفوظ میباشد</h1>
+   <a class="order-btn" href="https://rubika.ir/mola__ali_110" target="_blank"> کانال  روبیکا </a>
+</div>
+<script type="text/javascript">
+  !function(){var i="zfNEis",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
+
+</script>
+
+  <footer class="update-footer">
+  <h3>سایت های معتبر خرید فونت</h3>
+  <ul>
+    <li><a href="https://fontiran.com/" target="_blank">فونت  ایران</a></li>
+    <li><a href="https://maryamsoft.com/FontShop/default.aspx" target="_blank">مریم سافت</a></li>
+
+  </ul>
+</footer>
+</body>
+</html>
