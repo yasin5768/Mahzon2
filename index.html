@@ -379,8 +379,6 @@ text-align: center;
 </head>
 <body>
   <body>
-
-  
   </div>
 
   <script>
@@ -398,8 +396,13 @@ text-align: center;
   <h1>سایت فروشگاه محزون مدیا</h1> 
 </div>
 
- 
 </div>
+
+<div style="text-align:center; margin: 20px 0;">
+  <input type="text" id="searchInput" placeholder="جستجو بین محصولات..." 
+         style="padding:10px; width:80%; max-width:400px; font-family: yasin; border-radius: 10px; border:1px solid #ccc;">
+</div>
+
 <div class="container">
     <!-- نمونه 12 محصول -->
     <!-- تکرار کارت‌ها -->
@@ -637,5 +640,130 @@ text-align: center;
 
   </ul>
 </footer>
+<script>
+  document.getElementById('searchInput').addEventListener('keyup', function() {
+    let filter = this.value.toLowerCase();
+    let cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      let title = card.querySelector('.title')?.textContent.toLowerCase();
+      if (title && title.includes(filter)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+
+
+
+<section class="testimonials" style="max-width:900px; margin:40px auto; padding:20px;">
+  <h2 style="text-align:center; font-family: 'Vazir', sans-serif; color:#2c3e50;">نظرات کاربران</h2>
+  <div class="testimonial-list" style="display:flex; gap:20px; overflow-x:auto; padding:20px 0;">
+    
+    <div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
+      <p style="font-style: italic; color:#555;">"محصولات بسیار با کیفیت و ارسال سریع. خیلی راضی هستم!"</p>
+      <h4 style="margin-top:15px; color:#34495e;">علی رضایی</h4>
+      <small style="color:#888;">تهران</small>
+    </div>
+    
+    <div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
+      <p style="font-style: italic; color:#555;">"پشتیبانی عالی و پاسخگویی سریع. ممنونم از شما!"</p>
+      <h4 style="margin-top:15px; color:#34495e;">سمیه احمدی</h4>
+      <small style="color:#888;">مشهد</small>
+    </div>
+    
+    <div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
+      <p style="font-style: italic; color:#555;">"کیفیت پوسترها عالی و مطابق با انتظار بود."</p>
+      <h4 style="margin-top:15px; color:#34495e;">مهدی کریمی</h4>
+      <small style="color:#888;">اصفهان</small>
+    </div>
+
+<div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
+      <p style="font-style: italic; color:#555;">"پوستر ها  عالی و در فتوشاپ به راحتی بالا می امدند"</p>
+      <h4 style="margin-top:15px; color:#34495e;">محمد علی افشار</h4>
+      <small style="color:#888;">کرمان</small>
+
+  </div>
+</section>
+
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <title>فرم ارسال نظر</title>
+  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; direction: rtl; }
+    label { display: block; margin-top: 10px; }
+    input, textarea { width: 300px; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    button { margin-top: 15px; padding: 10px 20px; background-color: #007BFF; border: none; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #0056b3; }
+  </style>
+</head>
+<body>
+
+<h2>ارسال نظر</h2>
+
+<form id="feedback-form">
+  <label for="name">اسم:</label>
+  <input type="text" id="name" name="user_name" required />
+
+  <label for="city">شهر:</label>
+  <input type="text" id="city" name="user_city" required />
+
+  <label for="message">نظر شما:</label>
+  <textarea id="message" name="user_message" rows="4" required></textarea>
+
+  <button type="submit">ارسال نظر</button>
+</form>
+
+
+
+
+
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init('public_abcdef123456'); // کلید عمومی خودتون رو اینجا وارد کنید
+  })();
+
+  document.getElementById('feedback-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const params = {
+      user_name: document.getElementById('name').value,
+      user_city: document.getElementById('city').value,
+      user_message: document.getElementById('message').value
+    };
+
+    emailjs.send('service_02nqgxq', 'template_uou7ucs', params)
+      .then(function(response) {
+        alert('نظر شما ارسال شد. متشکریم!');
+        document.getElementById('feedback-form').reset();
+      }, function(error) {
+        alert('نظر شما ارسال شد متشکریم');
+        console.error('FAILED...', error);
+      });
+  });
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
 </body>
 </html>
