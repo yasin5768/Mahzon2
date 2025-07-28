@@ -380,10 +380,72 @@ text-align: center;
   border-radius: 10px;
 }
 
+
+
+
+
+
+
+
+
+  /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: -200px;
+      left: 10px;
+      background: linear-gradient(135deg, #ff99cc, #cc66ff);
+      color: white;
+      padding: 20px 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      font-size: 16px;
+      z-index: 9999;
+      transition: all 0.8s ease;
+      opacity: 0;
+      max-width: 300px;
+      line-height: 1.6;
+    }
+
+    .toast.show {
+      bottom: 40px;
+      opacity: 1;
+    }
+
+    .code {
+      margin-top: 10px;
+      background: rgba(255,255,255,0.2);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-weight: bold;
+      display: inline-block;
+      letter-spacing: 1px;
+    }
+
+
+
+
+
+
+
+ 
+
+
 </style>
 </head>
 <body>
   <body>
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 
   <script>
@@ -623,12 +685,9 @@ text-align: center;
 
 
 
-
-
-
 <div id="yasin" >
     <h1  >تمامی سفارشات بصورت عکس یا فایل  لایه  باز میباشد</h1>   
-      <h1>هرگونه کپی برداری از محصولات پیگیری  قانونیدارد</h1>
+      <h1>هرگونه کپی برداری از محصولات پیگیری  قانونی دارد</h1>
    <a class="order-btn" href="https://rubika.ir/mola__ali_110" target="_blank"> کانال  روبیکا </a>
 </div>
 <script type="text/javascript">
@@ -663,42 +722,14 @@ text-align: center;
 
 
 
-<section class="testimonials" style="max-width:900px; margin:40px auto; padding:20px;">
-  <h2 style="text-align:center; font-family: 'Vazir', sans-serif; color:#2c3e50;">نظرات کاربران</h2>
-  <div class="testimonial-list" style="display:flex; gap:20px; overflow-x:auto; padding:20px 0;">
-    
-    <div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
-      <p style="font-style: italic; color:#555;">"محصولات بسیار با کیفیت و ارسال سریع. خیلی راضی هستم!"</p>
-      <h4 style="margin-top:15px; color:#34495e;">علی رضایی</h4>
-      <small style="color:#888;">تهران</small>
-    </div>
-    
-    <div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
-      <p style="font-style: italic; color:#555;">"پشتیبانی عالی و پاسخگویی سریع. ممنونم از شما!"</p>
-      <h4 style="margin-top:15px; color:#34495e;">سمیه احمدی</h4>
-      <small style="color:#888;">مشهد</small>
-    </div>
-    
-    <div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
-      <p style="font-style: italic; color:#555;">"کیفیت پوسترها عالی و مطابق با انتظار بود."</p>
-      <h4 style="margin-top:15px; color:#34495e;">مهدی کریمی</h4>
-      <small style="color:#888;">اصفهان</small>
-    </div>
 
-<div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
-      <p style="font-style: italic; color:#555;">"پوستر ها  عالی و در فتوشاپ به راحتی بالا می امدند"</p>
-      <h4 style="margin-top:15px; color:#34495e;">محمد علی افشار</h4>
-      <small style="color:#888;">کرمان</small>
 
-  </div>
 
-  <div class="testimonial-card" style="flex:0 0 300px; background:#f9f9f9; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-family: 'Vazir', sans-serif;">
-      <p style="font-style: italic; color:#555;">"ازشما واقعا ممنونم کیفیت و قیمت تمامی پوستر ها عالی و بینظیر  بود "</p>
-      <h4 style="margin-top:15px; color:#34495e;">مبینا حسنزاده</h4>
-      <small style="color:#888;">کرمان</small>
 
-  </div>
-</section>
+
+
+
+
 
 
 
@@ -766,6 +797,31 @@ text-align: center;
 </script>
 
 
+
+
+
+
+
+  <div id="toast" class="toast">
+خوش  امدید به سایت ما<br>
+    اینم کد تخفیف مخصوص تو:
+    <div class="code">OFF2025</div>
+  </div>
+
+  <script>
+    // بعد از 2 ثانیه اعلان باز میشه
+    window.addEventListener("load", () => {
+      const toast = document.getElementById("toast");
+      setTimeout(() => {
+        toast.classList.add("show");
+      }, 2000);
+      
+      // بعد از 8 ثانیه خودش بسته میشه
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 10000);
+    });
+  </script>
 
 
 
