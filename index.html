@@ -11,17 +11,24 @@ content="width=device-width, initial-scale=1.0">
         font-family: yasin;
         src: url(kimi.ttf);
     }
-    body {
+
+ body {
       font-family: 'Vazir', sans-serif;
       background: linear-gradient(to right, #fdfbfb, #ebedee);
-      margin: auto;
+      margin: 0;
       padding: 20px;
     }
+
+
+
+
+
+
 
     h1 {
       text-align: center;
       font-size: 32px;
-      color: #333;
+      color: #000000;
       margin-bottom: 40px;
     }
 
@@ -116,15 +123,21 @@ border-radius: 10px;
 margin: auto;
 text-align: center;
     }
-    #g1{
-        color: black;
-        background-color: white;
-        border: 10px #000000;
+  
+  
+
+
+   #g1{
+
         border-radius: 10px;
         text-align: center;
         font-family: yasin ;
-        padding: 0px;
-    }
+        padding: 10px
+   }
+
+
+
+
  .update-footer {
     background: linear-gradient(to right, #ffe6f0, #ffccdf);
     padding: 25px 15px;
@@ -427,6 +440,96 @@ text-align: center;
 
 
 
+    @font-face {
+      font-family: 'MahzonFont';
+      src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.woff2');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+ 
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    .mahzon-logo {
+      font-size: 50px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff0055, #ff88aa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 2s ease-in-out infinite alternate;
+    }
+
+    .loading-line {
+      margin-top: 30px;
+      width: 100px;
+      height: 4px;
+      background: #ff0055;
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .loading-line::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 100%;
+      background: white;
+      left: -40px;
+      animation: moveLine 1.2s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0.5; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes moveLine {
+      0% { left: -40px; }
+      100% { left: 100%; }
+    }
+
+    #main {
+      display: none;
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+
+
+
+
+
+
+
+
+
  
 
 
@@ -461,9 +564,7 @@ text-align: center;
     </div>
 <div id="g1" >
   <h1>سایت فروشگاه محزون مدیا</h1> 
-</div>
 
-</div>
 
 <div style="text-align:center; margin: 20px 0;">
   <input type="text" id="searchInput" placeholder="جستجو بین محصولات..." 
@@ -700,7 +801,7 @@ text-align: center;
   <ul>
     <li><a href="https://fontiran.com/" target="_blank">فونت  ایران</a></li>
     <li><a href="https://maryamsoft.com/FontShop/default.aspx" target="_blank">مریم سافت</a></li>
-
+   <li><a href="about.html" target="_blank">درباه ما</a></li>
   </ul>
 </footer>
 <script>
@@ -822,6 +923,43 @@ text-align: center;
       }, 10000);
     });
   </script>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- صفحه لودینگ -->
+  <div id="loader">
+    <div class="mahzon-logo">mahzon</div>
+    <div class="loading-line"></div>
+  </div>
+
+
+
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      const main = document.getElementById('main');
+
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        main.style.display = 'block';
+      }, 3500); // مدت زمان نمایش لودینگ (۳.۵ ثانیه)
+    });
+  </script>
+
+
+
+
+
+
+
 
 
 
